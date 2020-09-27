@@ -29,10 +29,55 @@
           <br>
           <p id="blurb">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur suscipit efficitur urna, ac maximus justo pellentesque et. Maecenas dolor nunc, blandit nec odio a, ultricies egestas dui. Phasellus risus mauris, maximus a tristique vitae, laoreet vel nunc. Nam dictum libero massa. Fusce lacinia ullamcorper diam vitae interdum. Curabitur varius, nisi in consectetur fringilla, massa justo fermentum mauris, fermentum mollis dolor sapien at lorem. Pellentesque mattis arcu velit, vel tincidunt purus luctus vitae. Phasellus volutpat efficitur odio eget aliquam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut aliquet tellus libero, et molestie mi molestie vel. Nullam fermentum leo in libero cursus, id condimentum ante ullamcorper. Nunc auctor mi pharetra posuere viverra. Quisque ornare erat venenatis mi varius, a volutpat purus congue.</p>
         </div>
-        <!--this image will be a slideshow eventually-->
-        <!--still not entirely sure how to tackle this part-->
-        <div id="slideshow">
-          <img id="image" src="slideshow/to-walk-to-crawl.JPG" alt="To walk, to crawl">
+        <div class="slideshow">
+          <div class="mySlides fade">
+ 
+            <img src="slideshow/to-walk-to-crawl.JPG" style="width:100%">
+            
+          </div>
+          
+          <div class="mySlides fade">
+            
+            <img src="slideshow/For-Celia(G1).JPG" style="width:100%">
+            
+          </div>
+          
+          <div class="mySlides fade">
+            
+            <img src="slideshow/Piano-key-necktie(G2).JPG" style="width:90%">
+            
+          </div>
+          
+          </div>
+          <br>
+          
+          <div style="text-align:center">
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+          </div>
+          
+          <script>
+          var slideIndex = 0;
+          showSlides();
+          
+          function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+            setTimeout(showSlides, 5000); 
+          }
+</script>
         </div>
       </div>
     
