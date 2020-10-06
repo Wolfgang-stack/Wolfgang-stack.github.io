@@ -3,9 +3,8 @@ html {
 }
 
 #page {
-    max-width: 150vh;
-    margin: auto;
-    
+width: 100%; 
+ 
 }
 
 #buffer {
@@ -29,8 +28,8 @@ html {
 
 #menu {
     max-width: 30%;
-    float: left;
-    display: inline;
+    
+    display: inline-block;
     font-family: 'Courier New', Courier, monospace;
     line-height: 1.5rem;
     margin-left: 3rem;
@@ -38,13 +37,31 @@ html {
     
 }
 
-.slideshow {
-    float: right;
-    display: inline;
-    max-width: 40%;
-    margin-top: 1rem;
 
+
+.slideshowContainer{
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    width: 30rem;
+    max-width: 50%;
+    
+    
+    
 }
+
+.slideshow {
+    text-align: center;
+}
+
+
+.slideshow img {
+    
+}
+
+
+
+
 
 #image {
     width: 80%;
@@ -60,6 +77,7 @@ line-height: 0.8rem;
 a {
     color: black;
     text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .galleryMenu {
@@ -71,8 +89,7 @@ a {
 
 .galleryContainer {
     display: grid;
-    justify-content: center;
-    align-items: center;
+    
     grid-template-areas: 
     "a b"
     "c d"
@@ -85,6 +102,7 @@ a {
 }
 
 .galleryImage {
+    
     width: 80%;
     padding: 2rem;
     margin-left: auto;
@@ -92,46 +110,64 @@ a {
 
 #imageOne {
     grid-area: a;
+    margin: auto;
 }
 
 #imageTwo {
     grid-area: b;
+    margin: auto;
 }
 
 #imageThree {
     grid-area: c;
+    margin: auto;
 }
 
 #imageFour {
     grid-area: d;
-    
+    margin: auto;
 }
 
 #imageFive {
     grid-area: e;
-    margin-left: 2rem;
+    margin: auto;
 }
 
 #imageSix {
     grid-area: f;
-    margin-left: 2rem;
+    margin: auto;
 }
 
 #imageSeven {
     grid-area: g;
+    margin: auto;
 }
 
 #imageEight {
     grid-area: h;
+    margin: auto;
 }
 
 #imageNine {
     grid-area: i;
-    margin-left: 2.5rem;
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
+#linkList {
+    color: red
 
+}
+
+#linkList a {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+   
+
+}
 
 
 
@@ -168,4 +204,32 @@ a {
          25% {opacity: 1;}
          80% {opacity: 1;}
          100% {opacity: 0;}
+     }
+
+     @media only screen and (max-width: 500px) {
+         #menu {
+             display: none;
+         }
+         .slideshow {
+           
+           margin: 0px auto;
+           max-width: 100%;
+           float: none;
+           margin: 0px auto;
+         }
+         .galleryContainer {
+            grid-template-areas: 
+            "a"
+            "b"
+            "c"
+            "d"
+            "e"
+            "f"
+            "g"
+            "h"
+            "i"
+         }
+         #imageNine {
+             max-width: 100%;
+         }
      }
