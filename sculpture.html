@@ -2,18 +2,20 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="giorgia.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
   </head>
 
 
 <body>
 
-    <div class="menuButton" onclick="menuButtonClick()">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-      </div>
+    
 
     <div id="page">
+        <div class="menuButton" onclick="menuButtonClick()">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+          </div>
         <!--blank space at top of the page -->
       <div id="buffer"></div>
       <!--menu for main page and sub pages (will need to change for responsive)-->
@@ -45,40 +47,40 @@
     
     
     
-    
-    <!--still having trouble here, centering the images is hard-->
-    <!--will also need to change this for responsive version-->
-    <div class="galleryContainer" id="slideshow">
-            <div id="imageOne">
-                <img class="galleryImage"  src="slideshow/Cadence(scultp).JPG" alt="">
+        <div class="galleryContainer" id="galleryContainer">
+            <div id="galleryImage" class="sculptureImg">
+                <img class="galleryImage"   src="slideshow/Cadence(scultp).JPG" alt="">
             </div>
-                <div id="imageTwo">
+            
+            <div id="galleryImage">
                     <img class="galleryImage"  src="" alt="">
-                </div>
-                <div id="imageThree">
+            </div>
+                
+            <div id="galleryImage">
                 <img class="galleryImage"  src="" alt="">
             </div>
 
-            <div id="imageFour">
+            <div id="galleryImage">
                 <img class="galleryImage"  src="" alt="">
             </div>
 
-            <div id="imageFive">
+            <div id="galleryImage">
                 <img class="galleryImage"  src="" alt="">
             </div>
 
-            <div id="imageSix">
+            <div id="galleryImage">
                 <img class="galleryImage"  src="" alt="">
             </div>
 
-            <div id="imageSeven"> 
-                <img class="galleryImage"  src="" alt="">
-            </div>
-            <div id="imageEight">
+            <div id="galleryImage">
                 <img class="galleryImage"  src="" alt="">
             </div>
 
-            <div id="imageNine" >
+            <div id="galleryImage">
+                <img class="galleryImage"  src="" alt="">
+            </div>
+            
+            <div id="galleryImage">
                 <img class="galleryImage" src="" alt="">
             </div>
 
@@ -93,7 +95,8 @@
 
       function menuButtonClick() {
          var menu = document.getElementById("menu");
-         var slideshow = document.getElementById("slideshow");
+         var galleryContainer = document.getElementById("galleryContainer");
+         
          
          if(window.innerWidth < 1024 && i == 0){
            menu.style.display = "none";
@@ -102,30 +105,36 @@
 
          if (menu.style.display === "none") {
            menu.style.display = "block";
-           slideshow.style.display = "none";
+           galleryContainer.style.display = "none";
+           
        menuOn = true;
          } else {
            menu.style.display = "none";
-           slideshow.style.display = "block";
+           galleryContainer.style.display = "grid";
+           
        menuOn = false;
          }
        }
 
        window.addEventListener("resize", function() {
            var menu = document.getElementById("menu");
-           var slideshow = document.getElementById("slideshow");
+           var galleryContainer = document.getElementById("galleryContainer");
+           
            
            if (window.matchMedia("(min-width: 1024px)").matches) {
                menu.style.display = "block";
-               slideshow.style.display = "block";
+               galleryContainer.style.display = "grid";
+               
            } else {
            if(menuOn == true){
                menu.style.display = "block";
-               slideshow.style.display = "none";
+               galleryContainer.style.display = "none";
+               
            }
            if(menuOn == false){
                menu.style.display = "none";
-               slideshow.style.display = "block";
+               galleryContainer.style.display = "grid";
+               
 
            }
        }
