@@ -36,19 +36,19 @@
         <div class="slideshow" id="slideshow">
           <div class="mySlides fade">
  
-            <img src="slideshow/to-walk-to-crawl.JPG" style="width:100%">
+            <img src="slideshow/to-walk-to-crawl.JPG" >
             
           </div>
           
           <div class="mySlides fade">
             
-            <img src="slideshow/For-Celia(G1).JPG" style="width:100%">
+            <img src="slideshow/For-Celia(G1).JPG" >
             
           </div>
           
           <div class="mySlides fade">
             
-            <img src="slideshow/Piano-key-necktie(G2).JPG" style="width:90%">
+            <img class="tooBig" src="slideshow/Piano-key-necktie(G2).JPG" >
             
           </div>
           
@@ -100,7 +100,7 @@
 	    menuOn = true;
           } else {
             menu.style.display = "none";
-            slideshow.style.display = "block";
+            slideshow.style.display = "flex";
 	    menuOn = false;
           }
         }
@@ -109,9 +109,9 @@
             var menu = document.getElementById("menu");
             var slideshow = document.getElementById("slideshow");
             
-            if (window.matchMedia("(min-width: 1024px)").matches) {
+            if (window.matchMedia("(min-width: 600px)").matches) {
                 menu.style.display = "block";
-                slideshow.style.display = "block";
+                slideshow.style.display = "grid";
             } else {
             if(menuOn == true){
                 menu.style.display = "block";
@@ -119,7 +119,7 @@
             }
             if(menuOn == false){
                 menu.style.display = "none";
-                slideshow.style.display = "block";
+                slideshow.style.display = "flex";
 
             }
         }
