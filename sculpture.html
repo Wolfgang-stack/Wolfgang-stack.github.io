@@ -6,6 +6,13 @@
 
 
 <body>
+
+    <div class="menuButton" onclick="menuButtonClick()">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+
     <div id="page">
         <!--blank space at top of the page -->
       <div id="buffer"></div>
@@ -41,7 +48,7 @@
     
     <!--still having trouble here, centering the images is hard-->
     <!--will also need to change this for responsive version-->
-    <div class="galleryContainer">
+    <div class="galleryContainer" id="slideshow">
             <div id="imageOne">
                 <img class="galleryImage"  src="slideshow/Cadence(scultp).JPG" alt="">
             </div>
@@ -77,7 +84,53 @@
 
         </div>
         
-    </div>   
+    </div> 
+    
+    
+    <script>
+        var i = 0;
+         var menuOn = false;
+
+      function menuButtonClick() {
+         var menu = document.getElementById("menu");
+         var slideshow = document.getElementById("slideshow");
+         
+         if(window.innerWidth < 1024 && i == 0){
+           menu.style.display = "none";
+           i = 1;
+         }
+
+         if (menu.style.display === "none") {
+           menu.style.display = "block";
+           slideshow.style.display = "none";
+       menuOn = true;
+         } else {
+           menu.style.display = "none";
+           slideshow.style.display = "block";
+       menuOn = false;
+         }
+       }
+
+       window.addEventListener("resize", function() {
+           var menu = document.getElementById("menu");
+           var slideshow = document.getElementById("slideshow");
+           
+           if (window.matchMedia("(min-width: 1024px)").matches) {
+               menu.style.display = "block";
+               slideshow.style.display = "block";
+           } else {
+           if(menuOn == true){
+               menu.style.display = "block";
+               slideshow.style.display = "none";
+           }
+           if(menuOn == false){
+               menu.style.display = "none";
+               slideshow.style.display = "block";
+
+           }
+       }
+})
+</script>
         
       
       </body>

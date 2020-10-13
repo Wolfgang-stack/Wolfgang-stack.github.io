@@ -2,25 +2,35 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="giorgia.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
   </head>
 
 
 <body>
+    <div class="menuButton" onclick="menuButtonClick()">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+
+
+
+
     <div id="page">
         <!--blank space at top of the page -->
       <div id="buffer"></div>
       <!--menu for main page and sub pages (will need to change for responsive)-->
-        <div id="menu" class="galleryMenu">
+      <div id="menu" class="galleryMenu">
           
-            <li id="mainMenu"><a href="index.html">Giorgia McRae</a></li>
-            <br>
-            <li id="mainMenu"><a href="drawing.html">Drawing</a></li>
-            <li id="mainMenu"><a href="sculpture.html">Sculpture</a></li>
-            <br>
-            <li id="mainMenu"><a href="">Exhibitions</a></li>
-            <li id="mainMenu"><a href="">News</a></li>
-            <li id="mainMenu"><a href="">CV</a></li>
-            <li id="mainMenu"><a href="links.html">Links and Contact</a></li>
+        <li id="mainMenu"><a href="index.html">Giorgia McRae</a></li>
+        <br>
+        <li id="mainMenu"><a href="drawing.html">Drawing</a></li>
+        <li id="mainMenu"><a href="sculpture.html">Sculpture</a></li>
+        <br>
+        <li id="mainMenu"><a href="">Exhibitions</a></li>
+        <li id="mainMenu"><a href="">News</a></li>
+        <li id="mainMenu"><a href="">CV</a></li>
+        <li id="mainMenu"><a href="links.html">Links and Contact</a></li>
           
           <br>
           <br>
@@ -38,46 +48,99 @@
     
     
     
-    
-    <!--still having truoble here, centering the images is hard-->
-    <!--will also need to change this for responsive version-->
+
     <div class="galleryContainer">
-            <div id="imageOne">
+            <div>
                 <img class="galleryImage"  src="slideshow/Eternal-flowers(G1).JPG" alt="">
             </div>
-                <div id="imageTwo">
-                    <img class="galleryImage"  src="slideshow/For-Celia(G1).JPG" alt="">
-                </div>
-                <div id="imageThree">
-                <img class="galleryImage"  src="slideshow/Piano-key-necktie(G2).JPG" alt="">
+            
+            <div>
+                    <img class="galleryImage"  src="slideshow/Piano-key-necktie(G2).JPG" alt="">
+            </div>
+                
+            <div>
+                <img class="galleryImage"  src="slideshow/For-Celia(G1).JPG" alt="">
             </div>
 
-            <div id="imageFour">
+            <div>
                 <img class="galleryImage"  src="slideshow/to-walk-to-crawl.JPG" alt="">
             </div>
 
-            <div id="imageFive">
+            <div class="landscape">
                 <img class="galleryImage"  src="slideshow/To-Roost(G3).JPG" alt="">
             </div>
 
-            <div id="imageSix">
+            <div class="landscape">
                 <img class="galleryImage"  src="slideshow/Stagnant-with-wings(G3).JPG" alt="">
             </div>
 
-            <div id="imageSeven"> 
+            <div>
                 <img class="galleryImage"  src="slideshow/Red-light-district(G3).JPG" alt="">
             </div>
-            <div id="imageEight">
+
+            <div>
                 <img class="galleryImage"  src="slideshow/Rabbit-with-red-moon(G4).JPG" alt="">
             </div>
-
-            <div id="imageNine" >
+            
+            <div >
                 <img class="galleryImage" src="slideshow/The-dead-horse(G4).JPG" alt="">
             </div>
 
         </div>
         
-    </div>   
+    </div> 
+
+    <script>
+         var i = 0;
+          var menuOn = false;
+
+       function menuButtonClick() {
+          var menu = document.getElementById("menu");
+          var slideshow = document.getElementById("slideshow");
+          
+          
+          if(window.innerWidth < 1024 && i == 0){
+            menu.style.display = "none";
+            i = 1;
+          }
+
+          if (menu.style.display === "none") {
+            menu.style.display = "block";
+            slideshow.style.display = "none";
+            
+	    menuOn = true;
+          } else {
+            menu.style.display = "none";
+            slideshow.style.display = "block";
+            
+	    menuOn = false;
+          }
+        }
+
+        window.addEventListener("resize", function() {
+            var menu = document.getElementById("menu");
+            var slideshow = document.getElementById("slideshow");
+            
+            
+            if (window.matchMedia("(min-width: 1024px)").matches) {
+                menu.style.display = "block";
+                slideshow.style.display = "block";
+                
+            } else {
+            if(menuOn == true){
+                menu.style.display = "block";
+                slideshow.style.display = "none";
+                
+            }
+            if(menuOn == false){
+                menu.style.display = "none";
+                slideshow.style.display = "block";
+                
+
+            }
+        }
+})
+</script>
         
       
       </body>
