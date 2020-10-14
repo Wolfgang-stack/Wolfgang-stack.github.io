@@ -95,47 +95,48 @@
         var i = 0;
          var menuOn = false;
 
-      function menuButtonClick() {
-         var menu = document.getElementById("menu");
-         var galleryContainer = document.getElementById("galleryContainer");
-         
-         
-         if(window.innerWidth < 1024 && i == 0){
-           menu.style.display = "none";
-           i = 1;
-         }
+         function menuButtonClick() {
+          var menu = document.getElementById("menu");
+          var slideshow = document.getElementById("slideshow");
+          var foot = document.getElementById("foot");
+          
+          if(window.innerWidth < 1024 && i == 0){
+            menu.style.display = "none";
+            i = 1;
+          }
 
-         if (menu.style.display === "none") {
-           menu.style.display = "block";
-           galleryContainer.style.display = "none";
-           
-       menuOn = true;
-         } else {
-           menu.style.display = "none";
-           galleryContainer.style.display = "grid";
-           
-       menuOn = false;
-         }
-       }
+          if (menu.style.display === "none") {
+            menu.style.display = "block";
+            slideshow.style.display = "none";
+            foot.style.display = "none";
+	    menuOn = true;
+          } else {
+            menu.style.display = "none";
+            slideshow.style.display = "grid";
+            foot.style.display = "grid";
+	    menuOn = false;
+          }
+        }
 
-       window.addEventListener("resize", function() {
-           var menu = document.getElementById("menu");
-           var galleryContainer = document.getElementById("galleryContainer");
-           
-           
-           if (window.matchMedia("(min-width: 768px)").matches) {
-               menu.style.display = "block";
-               galleryContainer.style.display = "grid";
-               
-           } else {
-           if(menuOn == true){
-               menu.style.display = "block";
-               galleryContainer.style.display = "none";
-               
-           }
-           if(menuOn == false){
-               menu.style.display = "none";
-               galleryContainer.style.display = "grid";
+        window.addEventListener("resize", function() {
+            var menu = document.getElementById("menu");
+            var slideshow = document.getElementById("slideshow");
+            var foot = document.getElementById("foot");
+            
+            if (window.matchMedia("(min-width: 768px)").matches) {
+                menu.style.display = "block";
+                slideshow.style.display = "grid";
+                foot.style.display = "none";
+            } else {
+            if(menuOn == true){
+                menu.style.display = "block";
+                slideshow.style.display = "none";
+                
+            }
+            if(menuOn == false){
+                menu.style.display = "none";
+                slideshow.style.display = "flex";
+                foot.style.display = "grid";
                
 
            }
