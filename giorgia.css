@@ -176,7 +176,7 @@ display: grid;
         display: block;
         border-radius: 25px;
         cursor: pointer;
-        margin: auto;
+        margin: 0 auto;
         top: 6px;
         z-index: 2;
         position: sticky;
