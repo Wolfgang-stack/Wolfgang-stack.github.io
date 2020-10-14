@@ -18,11 +18,7 @@ body {
   display:none;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-    
-}
+
 
 
 
@@ -61,7 +57,7 @@ img {
     font-family: 'Courier New', Courier, monospace;
     font-size: 1vw;
     line-height: 2vw;
-    margin-left: 3rem;
+    margin-left: 3vw;
     
     
 }
@@ -79,20 +75,17 @@ a {
     color: black;
     text-decoration: none;
 }
-
+img {
+    width: 100%;
+}
 .slideshow {
-    
-    
-    
-display: grid;
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(1, auto);
     grid-gap: 3rem;
     justify-items: center;
     align-items: center;
-    
-    
-      
+    margin-right: 3vw;
 }
 
 .mySlides {
@@ -101,26 +94,32 @@ display: grid;
     grid-column-end: span 2;
 }
 
+.tooBig {
+    max-width: 90%;
+}
+
 .galleryMenu {
-    position: ;
     top: 8rem;
     margin-right: 12vw;
 }
 
-.galleryImage {
-    max-width: 100%;
-}
+
+
 .galleryContainer {
-    max-width: 100%;
+    max-width: 100%; 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(1, 1fr);
     grid-column-gap: 10%;
     grid-row-gap: 2%;
-    justify-items: center;
-    align-items: center;
-    margin-right: 3rem;
     
+    align-items: center;
+    margin-right: 3vw;
+    
+}
+
+.galleryContainer img {
+    width: 100%;
 }
 
 .landscape {
@@ -128,14 +127,11 @@ display: grid;
 }
 
 .sculptureImg {
-    justify-self: start;
     max-width: 70%;
     grid-column-end: span 2;
 }
 
-.tooBig {
-    max-width: 90%;
-}
+
 
 .foot {
     display: none;
@@ -227,8 +223,8 @@ display: grid;
 }
 
 .slideshow {
-    display: flex;
-    padding-top: 2vh;
+    display: grid;
+    
     max-width: 99%;
     margin-left: auto;
     margin-right: auto;
@@ -249,7 +245,7 @@ display: grid;
 @media only screen and (max-width:780px){
     #page {
         display: grid;
-        
+        height: auto;
        
         margin: 0px; 
         
@@ -271,15 +267,23 @@ display: grid;
 .galleryContainer {
     padding-top: 20px;
     z-index: 1;
-    margin-left:  auto;
-    margin-right: auto;
-    display: grid;
+    margin: 0 auto;
+    
     
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(1, auto);
+    grid-template-rows: repeat(1, 1fr);
     grid-gap: 2rem;   
     align-items: center;
     justify-items: center;
+}
+.galleryContainer img {
+    margin-left: auto;
+    margin-right: auto;
+    width: 97vw;
+}
+
+.slideshow {
+    padding-top: 6vh;
 }
 
 .mySlides{
@@ -288,12 +292,14 @@ display: grid;
 }
 
 .tooBig {
+    max-width: 95%;
     justify-self: center;
 }
 
 
 #galleryImage {
     grid-column-end: span 2;
+    
     
 }
 
