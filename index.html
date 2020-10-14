@@ -8,13 +8,16 @@
 
   <body>
 
-<div class="menuButton" onclick="menuButtonClick()">
-  <div class="bar1"></div>
-  <div class="bar2"></div>
-  <div class="bar3"></div>
-</div>
+<div 
     
     <div id="page">
+
+      <div class="menuButton" onclick="menuButtonClick()">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+          
       <div id="buffer">
       </div>
       <div id="menu" class="galleryMenu">
@@ -61,6 +64,14 @@
             <span class="dot"></span> 
           </div>
           
+          <div id="foot" class="foot">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+
+
+
+
+
+
+          
           <script>
           var slideIndex = 0;
           showSlides();
@@ -77,7 +88,7 @@
             for (i = 0; i < dots.length; i++) {
               dots[i].className = dots[i].className.replace(" active", "");
             }
-            slides[slideIndex-1].style.display = "block";  
+            slides[slideIndex-1].style.display = "grid";  
             dots[slideIndex-1].className += " active";
             setTimeout(showSlides, 5000); 
           }
@@ -88,6 +99,7 @@
        function menuButtonClick() {
           var menu = document.getElementById("menu");
           var slideshow = document.getElementById("slideshow");
+          var foot = document.getElementById("foot");
           
           if(window.innerWidth < 1024 && i == 0){
             menu.style.display = "none";
@@ -97,10 +109,12 @@
           if (menu.style.display === "none") {
             menu.style.display = "block";
             slideshow.style.display = "none";
+            foot.style.display = "none";
 	    menuOn = true;
           } else {
             menu.style.display = "none";
-            slideshow.style.display = "flex";
+            slideshow.style.display = "grid";
+            foot.style.display = "grid";
 	    menuOn = false;
           }
         }
@@ -108,18 +122,22 @@
         window.addEventListener("resize", function() {
             var menu = document.getElementById("menu");
             var slideshow = document.getElementById("slideshow");
+            var foot = document.getElementById("foot");
             
-            if (window.matchMedia("(min-width: 600px)").matches) {
+            if (window.matchMedia("(min-width: 768px)").matches) {
                 menu.style.display = "block";
                 slideshow.style.display = "grid";
+                foot.style.display = "none";
             } else {
             if(menuOn == true){
                 menu.style.display = "block";
                 slideshow.style.display = "none";
+                
             }
             if(menuOn == false){
                 menu.style.display = "none";
                 slideshow.style.display = "flex";
+                foot.style.display = "grid";
 
             }
         }

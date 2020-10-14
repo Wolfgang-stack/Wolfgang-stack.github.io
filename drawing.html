@@ -3,6 +3,7 @@
   <head>
     <link rel="stylesheet" type="text/css" href="giorgia.css">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   </head>
 
 
@@ -13,7 +14,7 @@
 
 
     <div id="page">
-        <div class="menuButton" onclick="menuButtonClick()">
+        <div class="menuButton" id="menuButton"  onclick="menuButtonClick()">
             <div class="bar1"></div>
             <div class="bar2"></div>
             <div class="bar3"></div>
@@ -123,7 +124,7 @@
             var galleryContainer = document.getElementById("galleryContainer");
             
             
-            if (window.matchMedia("(min-width: 600px)").matches) {
+            if (window.matchMedia("(min-width: 768px)").matches) {
                 menu.style.display = "block";
                 galleryContainer.style.display = "grid";
                 
@@ -141,6 +142,20 @@
             }
         }
 })
+
+var target = $('.menuButton');
+var targetHeight = target.outerHeight();
+
+$(document).scroll(function(e){
+    if( window.scrollY >= 51){
+        target.css('opacity', 0.3);}
+        else {
+          target.css('opacity', 1)
+        }
+
+        
+    }
+);
 </script>
         
       

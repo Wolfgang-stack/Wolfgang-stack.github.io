@@ -18,7 +18,7 @@ img {
 
 #page {
     display: block;
-    max-width: 80vw; 
+    max-width: 95%; 
     max-height: 100%; 
     margin: 0 auto;
 }
@@ -27,7 +27,7 @@ img {
     width: 100%;
     height: 100%;
     
-    height: 5rem;
+    height: 6vh;
     
     top: 0;
 
@@ -47,9 +47,10 @@ img {
     float: left;
     display: block;
     font-family: 'Courier New', Courier, monospace;
-    line-height: 1.5rem;
+    font-size: 1vw;
+    line-height: 2vw;
     margin-left: 3rem;
-    text-indent: rem;
+    
     
 }
 
@@ -57,9 +58,9 @@ img {
 
 #blurb {
 color: gray;    
-font-size: 0.6rem;
+font-size: 0.8vw;
 max-width: 100%;
-line-height: 0.8rem;
+line-height: 1.2vw;
 }
 
 a {
@@ -68,40 +69,45 @@ a {
 }
 
 .slideshow {
-    max-width: 40%;
-    display: grid;
+    
+    
+    
+display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(1, minmax(auto, auto));
+    grid-template-rows: repeat(1, auto);
     grid-gap: 3rem;
     justify-items: center;
     align-items: center;
+    
     
       
 }
 
 .mySlides {
+    justify-self: center;
+    width: 32vw;
     grid-column-end: span 2;
-    max-width: 100%;
 }
 
 .galleryMenu {
-    margin-top: 2rem;
-    position: sticky;
+    position: ;
     top: 8rem;
-    margin-right: 3rem;
+    margin-right: 12vw;
 }
 
 .galleryImage {
     max-width: 100%;
 }
 .galleryContainer {
-    max-width: 90%;
+    max-width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(1, 1fr);
-    grid-gap: 3rem;
+    grid-column-gap: 10%;
+    grid-row-gap: 2%;
     justify-items: center;
     align-items: center;
+    margin-right: 3rem;
     
 }
 
@@ -115,8 +121,13 @@ a {
     grid-column-end: span 2;
 }
 
-   
+.tooBig {
+    max-width: 90%;
+}
 
+.foot {
+    display: none;
+ }
 
 
 
@@ -147,22 +158,24 @@ a {
          100% {opacity: 0;}
      }
 
-@media only screen and (min-width: 1px) and (max-width:600px){
+@media only screen and (min-width: 1px) and (max-width:780px){
 
 .menuButton {
-  display: inline-block;
-  cursor: pointer;
-  float: right;
-  top: 10px;
-  z-index: 2;
-  position: sticky;
+        display: block;
+        border-radius: 25px;
+        cursor: pointer;
+        margin: auto;
+        top: 6px;
+        z-index: 2;
+        position: sticky;
 }
 
 .bar1, .bar2, .bar3 {
-  width: 30px;
-  height: 3px;
-  background-color: #333;
-  margin: 5px 0;
+    border-radius: 25px;
+    width: 40px;
+    height: 4px;
+    background: #333;
+    margin: 5px;
 }
 
 #blurb{
@@ -203,7 +216,7 @@ a {
 
 .slideshow {
     display: flex;
-    padding-top: 40px;
+    padding-top: 12vh;
     max-width: 99%;
     position: fixed;
     margin-left: auto;
@@ -222,7 +235,7 @@ a {
    
 }
 
-@media only screen and (max-width:600px){
+@media only screen and (max-width:780px){
     #page {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
@@ -240,27 +253,36 @@ a {
         display: none;
     }
 
-
+#menu {
+    padding-top: 5vh;
+    font-size: 100%;
+}
 
 
 .galleryContainer {
-    
     padding-top: 20px;
     z-index: 1;
-   
-    
     margin-left:  auto;
     margin-right: auto;
-    
-    
     display: grid;
-    max-width: 100%;
+    
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(1, auto);
     grid-gap: 2rem;   
     align-items: center;
     justify-items: center;
-    }
+}
+
+.mySlides{
+    justify-self: center;
+    width: 97vw;
+}
+
+.tooBig {
+    justify-self: center;
+}
+
+
 #galleryImage {
     grid-column-end: span 2;
     
@@ -270,4 +292,38 @@ a {
     max-width: 100%;
     grid-column-end: span 2;
     
+}
+
+.foot {
+    display: grid;
+    font-size: 80%;
+    width: 97vw;
+    position: fixed;
+    left:0;
+    bottom:5vh;
+    right: 0;
+    padding: 10px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+
+.menuButton {
+    display: block;
+    border-radius: 25px;
+    cursor: pointer;
+    
+    z-index: 2;
+    
+}
+}
+
+@media only screen and (min-width: 780px) and (max-width:1500px) {
+#menu {
+    font-size: 15px;
+    line-height: 27px;
+}
+#blurb {
+    font-size: 10px;
+}
 }
