@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <link rel="stylesheet" type="text/css" href="giorgia.css">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -12,7 +13,7 @@
     
 
     <div id="page">
-        <div class="menuButton" onclick="menuButtonClick()">
+        <div class="menuButton" id="menuButton" onclick="menuButtonClick()">
             <div class="bar1"></div>
             <div class="bar2"></div>
             <div class="bar3"></div>
@@ -23,19 +24,18 @@
         <div id="menu" class="galleryMenu">
           
             <li id="mainMenu"><a href="index.html">Giorgia McRae</a></li>
-            <br>
-            <li id="mainMenu"><a href="drawing.html">Drawing</a></li>
-            <li id="mainMenu"><a href="sculpture.html">Sculpture</a></li>
-            <br>
-            <li id="mainMenu"><a href="">Exhibitions</a></li>
-            <li id="mainMenu"><a href="">News</a></li>
-            <li id="mainMenu"><a href="">CV</a></li>
-            <li id="mainMenu"><a href="links.html">Links and Contact</a></li>
+        <br>
+        <li id="mainMenu"><a href="drawing.html">Drawing</a></li>
+        <li id="mainMenu"><a href="sculpture.html">Sculpture</a></li>
+        <li id="mainMenu"><a href="">News</a></li>
+        <li id="mainMenu"><a href="">CV</a></li>
+        <br>
+        <li id="mainMenu"><a href="https://www.instagram.com/giorgiamcraeart/?hl=en">Instagram</a></li>
           
           <br>
           <br>
           <!--bio text to be added here-->
-          <p id="blurb">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur suscipit efficitur urna, ac maximus justo pellentesque et. Maecenas dolor nunc, blandit nec odio a, ultricies egestas dui. Phasellus risus mauris, maximus a tristique vitae, laoreet vel nunc. Nam dictum libero massa. Fusce lacinia ullamcorper diam vitae interdum. Curabitur varius, nisi in consectetur fringilla, massa justo fermentum mauris, fermentum mollis dolor sapien at lorem. Pellentesque mattis arcu velit, vel tincidunt purus luctus vitae. Phasellus volutpat efficitur odio eget aliquam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut aliquet tellus libero, et molestie mi molestie vel. Nullam fermentum leo in libero cursus, id condimentum ante ullamcorper. Nunc auctor mi pharetra posuere viverra. Quisque ornare erat venenatis mi varius, a volutpat purus congue.</p>
+          <p id="blurb">Giorgia McRae is an emerging artist based in Sydney, Australia. Through her practice, she explores both sculpture and drawing and the playful relationship between the two mediums. McRaes sculptures investigate the concept of drawing in space with steel, while her drawings focus on line, shape and colour. McRae has just completed a Bachelor of Fine Arts at the National Art School.</p>
         </div>
     
  
@@ -98,7 +98,9 @@
          function menuButtonClick() {
           var menu = document.getElementById("menu");
           var galleryContainer = document.getElementById("galleryContainer");
+          document.getElementById("menuButton").style.marginTop = "6px";
           var foot = document.getElementById("foot");
+          
           
           
           if(window.innerWidth < 1024 && i == 0){
